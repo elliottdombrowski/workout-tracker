@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
 }); 
 
 //TODO- FINISH ROUTES AND FIX REQUIRE PATH
-app.use(require('./routes/'));
+// app.use(require('./routes/'));
 
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
