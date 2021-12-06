@@ -27,4 +27,12 @@ router.get('/stats', (req, res) => {
     };
 });
 
+router.get('/exercise/:id', (req, res) => {
+    try {
+        // FIND EXERCISE BY ID
+    } catch (err) {
+        res.status(500).json(err);
+    };
+});
+
 module.exports = router;
