@@ -2,16 +2,21 @@ const router = require('express').Router();
 const { Workout } = require('../../models');
 
 router.get('/workouts', async ({ body }, res) => {
-    try {
-        const workout = await Workout.find({});
-        res.json(workout);
-    } catch (err) {
-        res.json(500).json(err);
-    }
+    Workout.aggregate([{
+        $addFields: { totalDuration: {$sum: "$exercises.duration" } }
+    }])
+        .then((data) => {
+            res.json(data);
+        })
+        .catch((err) => {
+            res.json(err);
+        });
 });
 
 router.get('/workouts/range', async (req, res) => {
-    Workout.find({})
+    Workout.aggregate([{
+        $addFields: { totalDuration: {$sum: "$exercises.duration" } }
+    }])
         .then((data) => {
             res.json(data);
         })
