@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const path = require('path');
-const Session = require('../models/Session');
+const Workout = require('../models/Workout');
 
 router.get('/', (req, res) => {
     try {
