@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const routes = require('./routes');
 
 //DECLARING LOCAL/ENV PORT TO LISTEN ON
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
