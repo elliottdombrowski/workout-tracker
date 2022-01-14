@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const routes = require('./routes');
+require('dotenv').config();
 
 //DECLARING LOCAL/ENV PORT TO LISTEN ON
 const PORT = process.env.PORT || 3000;
